@@ -5,7 +5,7 @@
 Create the environment:
 
 ``` sh
-conda create --name sat-exp --file environment.txt
+conda env create -f environment.yml
 ```
 
 
