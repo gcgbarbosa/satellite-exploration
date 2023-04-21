@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 import math
 
 def calculate_destination_coordinate(lat, lon, angle, distance):
@@ -32,5 +31,5 @@ def calculate_destination_coordinate(lat, lon, angle, distance):
 
     return (new_lat, new_lon)
 
-
-calculate_destination_coordinate(37.7749, -122.4194, 45, 10)
+coordinate = calculate_destination_coordinate(37.7749, -122.4194, 45, 10)
+print(coordinate)
