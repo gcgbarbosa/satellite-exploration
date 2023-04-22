@@ -42,6 +42,33 @@ def calculate_azimuth(lat1, long1, lat2, long2):
     return azimuth
 
 
+def orbital_inclination(lat1, lon1, lat2, lon2):
+    # convert latitudes and longitudes to radians
+    lat1, lon1 = math.radians(lat1), math.radians(lon1)
+    lat2, lon2 = math.radians(lat2), math.radians(lon2)
+
+    # calculate dot product of two points in Cartesian coordinates
+    x1 = math.cos(lat1) * math.cos(lon1)
+    y1 = math.cos(lat1) * math.sin(lon1)
+    z1 = math.sin(lat1)
+
+    x2 = math.cos(lat2) * math.cos(lon2)
+    y2 = math.cos(lat2) * math.sin(lon2)
+    z2 = math.sin(lat2)
+
+    dot = x1 * x2 + y1 * y2 + z1 * z2
+
+    # calculate magnitude of two points
+    mag1 = math.sqrt(x1 ** 2 + y1 ** 2 + z1 ** 2)
+    mag2 = math.sqrt(x2 ** 2 + y2 ** 2 + z2 ** 2)
+
+    # calculate angle between two points
+    angle = math.acos(dot / (mag1 * mag2))
+
+    # convert angle from radians to degrees
+    inclination = math.degrees(angle)
+
+    return inclination
 
 #2,San-Jose,9.934261,-84.079025
 #3,P2,-1.514283,14.613158
@@ -55,3 +82,4 @@ point2 = (-53.788989,-73.571008)
 
 print("azimuth: ", calculate_azimuth(point1[0], point1[1], point2[0], point2[1]))
 print("bearing: ", calculate_bearing(point1[0], point1[1], point2[0], point2[1]))
+print("orbital: ", orbital_inclination(point1[0], point1[1], point2[0], point2[1]))
