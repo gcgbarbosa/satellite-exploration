@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import math
+import argparse
 
 def calculate_destination_coordinate(lat, lon, angle, distance):
     """
@@ -31,5 +32,19 @@ def calculate_destination_coordinate(lat, lon, angle, distance):
 
     return (new_lat, new_lon)
 
-coordinate = calculate_destination_coordinate(37.7749, -122.4194, 45, 10)
-print(coordinate)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+
+    # parser.add_argument('arg_name', help='helpful message about the argument')
+    parser.add_argument('lat', type=float, help='Latitude')
+    parser.add_argument('long', type=float, help='Longitude')
+    parser.add_argument('d', type=float, help='distance')
+    parser.add_argument('i', type=float, help='Angle')
+
+    args = parser.parse_args()
+
+    coordinate = calculate_destination_coordinate(args.lat, args.long, args.i, args.d)
+
+    print(coordinate)

@@ -39,6 +39,9 @@ point2 = (-53.788989,-73.571008)
 point1 = (48.421769,-123.362389)
 point2 = (-39.989778,-72.517383)
 
+point1 = (36.99996960996491, 89.91487913126574)
+point2 = (0.0, 0.0)
+
 distance = calculate_distance(point1[0], point1[1], point2[0], point2[1])
 
 # print distance

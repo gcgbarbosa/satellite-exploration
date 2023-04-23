@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 import math
 
 def calculate_bearing(lat1, lon1, lat2, lon2):
@@ -72,13 +73,14 @@ def orbital_inclination(lat1, lon1, lat2, lon2):
 
 #2,San-Jose,9.934261,-84.079025
 #3,P2,-1.514283,14.613158
-point1 = (9.934261,-84.079025)
-point2 = (-1.514283,14.613158)
-
+point1 = (45.501886,-73.567392)
+point2 = (-53.788989,-73.571008)
 
 point1 = (45.501886,-73.567392)
 point2 = (-53.788989,-73.571008)
 
+point1 = (0.0, 0.0)
+point2 = (36.99996960996491, 89.91487913126574)
 
 print("azimuth: ", calculate_azimuth(point1[0], point1[1], point2[0], point2[1]))
 print("bearing: ", calculate_bearing(point1[0], point1[1], point2[0], point2[1]))
